@@ -3,17 +3,42 @@
     ViewBag.Title = "FAQ";
 }
 
-<h2>FAQ</h2>
+<h2><br/><br/></h2>
 <div class="container">
 
-    <h2>@ViewBag.NameOfMission</h2>
-    <p>
-        <h5>President Name: </h5>@ViewBag.PresidentName <br/>
-        <h5>Mission Address: </h5>@ViewBag.MissionAddress <br />
-        <h5>Language: </h5>@ViewBag.Language <br />
-        <h5>Climate: </h5>@ViewBag.Climate <br />
-        <h5>Dominant Religion: </h5>@ViewBag.DomReligion <br />
-        <h5>Flag: </h5>@ViewBag.Flag <br />
-    </p>
+
+    <div class="row">
+        <div class="col-lg-12 text-center">
+            <h2>@ViewBag.NameOfMission Mission FAQ's</h2>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-6">
+            <p>
+                <h5>President Name: </h5>@ViewBag.PresidentName <br /> <br />
+                <h5>Mission Address: </h5>@ViewBag.MissionAddress <br /><br />
+                <h5>Language: </h5>@ViewBag.Language <br /><br />
+                <h5>Climate: </h5>@ViewBag.Climate <br /><br />
+                <h5>Dominant Religion: </h5>@ViewBag.DomReligion <br /><br />
+            </p>    
+        </div>
+        <div class="col-lg-6 text-center">
+            <div class="container">
+                <img class="img-thumbnail" src="~/Content/img/@(ViewBag.Flag)" />
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-12 text-center">
+            <h2>Have any questions?</h2>
+            <form>
+                <textarea class="form-control" id="message" placeholder="Enter your question here *"
+                          required data-validation-required-message="Enter your question here *"></textarea>
+                <p class="help-block text-danger"></p>
+                <button class="btn btn-primary btn-xl text-uppercase" type="reset">Ask</button>
+            </form>
+        </div>
+    </div>
 </div>
 

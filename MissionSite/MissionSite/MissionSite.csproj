@@ -164,7 +164,10 @@
     <Content Include="Content\img\logos\themeforest.jpg" />
     <Content Include="Content\img\map-image.png" />
     <Content Include="Content\img\header-bg.jpg" />
+    <Content Include="Content\img\mexflag.jpg" />
     <Content Include="Content\img\MissionPrep.jpg" />
+    <Content Include="Content\img\Mozflag.png" />
+    <Content Include="Content\img\philflag.png" />
     <Content Include="Content\img\portfolio\01-full.jpg" />
     <Content Include="Content\img\portfolio\01-thumbnail.jpg" />
     <Content Include="Content\img\portfolio\02-full.jpg" />
