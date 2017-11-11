@@ -31,7 +31,7 @@ namespace MissionSite.Controllers
                 ViewBag.DomReligion = "Catholic";
                 ViewBag.Flag = "";
             }
-            else if (MissionName.Equals("1"))
+            else if (MissionName.Equals("2"))
             {
                 ViewBag.NameOfMission = "Africa, Mozambique Maputo";
                 ViewBag.PresidentName = "President Joni Koch";
@@ -41,7 +41,7 @@ namespace MissionSite.Controllers
                 ViewBag.DomReligion = "Catholic";
                 ViewBag.Flag = "";
             }
-            else if (MissionName.Equals("2"))
+            else if (MissionName.Equals("3"))
             {
                 ViewBag.NameOfMission = "Mexico, Mexico City Southeast";
                 ViewBag.PresidentName = "President Lindsay K. Mann";
