@@ -1,0 +1,19 @@
+﻿
+@{
+    ViewBag.Title = "Mission";
+}
+<h2><br /><br /></h2>
+<div class="container">
+    @using (Html.BeginForm("MissionChosen", "SelectedMission", FormMethod.Get))
+    {
+        <fieldset>
+            <h2>Missions</h2><br /><br/>
+            @Html.DropDownList("MissionName")
+            <br />
+            <br />
+            <p>
+                <input type="submit" value="Submit" />
+            </p>
+        </fieldset>
+    }
+</div>

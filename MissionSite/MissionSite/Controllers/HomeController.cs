@@ -26,12 +26,5 @@ namespace MissionSite.Controllers
 
             return View();
         }
-
-        public ActionResult Mission()
-        {
-            ViewBag.Message = "Your mission page.";
-
-            return View();
-        }
     }
 }
