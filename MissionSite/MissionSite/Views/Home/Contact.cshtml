@@ -1,9 +1,7 @@
 ﻿@{
     ViewBag.Title = "Contact";
 }
-<h2>@ViewBag.Title.</h2>
-<h3>@ViewBag.Message</h3>
-
+<h2><br /><br /></h2>
 <!-- Contact -->
 <section id="contact">
     <div class="container">
@@ -27,8 +25,12 @@
                                 <p class="help-block text-danger"></p>
                             </div>
                             <div class="form-group">
-                                <input class="form-control" id="phone" type="tel" placeholder="Your Phone *" required data-validation-required-message="Please enter your phone number.">
-                                <p class="help-block text-danger"></p>
+                                <select class="form-control" id="subject" placeholder="Subject *" required data-validation-required-message="Please choose a subject.">
+                                    <option disabled selected hidden>Select Subject</option>
+                                    <option>Companions</option>
+                                    <option>Preparation</option>
+                                    <option>Food</option>
+                                </select>
                             </div>
                         </div>
                         <div class="col-md-6">
