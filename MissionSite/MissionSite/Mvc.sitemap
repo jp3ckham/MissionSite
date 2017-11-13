@@ -8,7 +8,7 @@
 	<mvcSiteMapNode title="Contact" controller="Home" action="Contact"/>
 		
 	<mvcSiteMapNode title="Mission" controller="SelectedMission" action="Mission">
-	<mvcSiteMapNode title="FAQ" controller="SelectedMission" action="FAQ"/>
+    <mvcSiteMapNode title="FAQ" controller="SelectedMission" action="MissionChosen"/>
 	</mvcSiteMapNode>
 	</mvcSiteMapNode>
 
