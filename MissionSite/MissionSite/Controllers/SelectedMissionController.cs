@@ -7,9 +7,10 @@ using System.Web.Mvc;
 namespace MissionSite.Controllers
 {
     public class SelectedMissionController : Controller
-    {
+    {       
         public ActionResult Mission()
-        {
+        {   
+            //this instantiates the dropdown list giving it values and stuff
             List<SelectListItem> missions = new List<SelectListItem>();
             missions.Add(new SelectListItem { Text = "Select a mission", Value = "0", Disabled = true, Selected = true });
             missions.Add(new SelectListItem { Text = "Philippines, Cavite", Value = "1" });
@@ -21,8 +22,10 @@ namespace MissionSite.Controllers
 
         public ViewResult MissionChosen(string MissionName)
         {
+            //this is the logic after you click dropdown this fills the viewbag for the page
             if (MissionName.Equals("1"))
-            {
+            {   
+                //philippines
                 ViewBag.NameOfMission = "Philippines, Cavite";
                 ViewBag.PresidentName = "President Aaron B. Speirs";
                 ViewBag.MissionAddress = "Avenida St. Pag-asa Subdivision \nMolino, Bacoor City \n4102 Cavite Philippines";
@@ -33,6 +36,7 @@ namespace MissionSite.Controllers
             }
             else if (MissionName.Equals("2"))
             {
+                //Mozambique
                 ViewBag.NameOfMission = "Africa, Mozambique Maputo";
                 ViewBag.PresidentName = "President Joni Koch";
                 ViewBag.MissionAddress = "Caixa postal 1166 Correio \nCentral Maputo, Maputo, Mozambique";
@@ -43,6 +47,7 @@ namespace MissionSite.Controllers
             }
             else if (MissionName.Equals("3"))
             {
+                //Mexico
                 ViewBag.NameOfMission = "Mexico, Mexico City Southeast";
                 ViewBag.PresidentName = "President Lindsay K. Mann";
                 ViewBag.MissionAddress = "Av. del Taller 540 \nCol. Jardin Balbuna del Venustiano Carranza \nCiudad de Mexico, Mexico  15900";
