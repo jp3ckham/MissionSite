@@ -11,6 +11,8 @@
             <h2>@ViewBag.NameOfMission Mission FAQ's</h2>
         </div>
     </div>
+
+    <!--Dynamic page based on what the user picks in the dropdown list in the Mission View-->
     <div class="row">
         <div class="col-lg-6">
             <p>
@@ -28,21 +30,63 @@
         </div>
     </div>
 
+    <!--question and answer section-->
     <div class="row">
         <div class="col-lg-12">
-            <p>
-                <h5>Q&A</h5><br />
-                <b>Q: </b>What time do missionaries get up in the morning?<br />
-                <b>A: </b>Missionaries get up each morning at 6:30AM.<br /><br />
-                <b>Q: </b>How long does it take to learn the language?<br />
-                <b>A: </b>Every missionary is different, but the average time it takes to learn the language is 6 months. <br /><br />
-                <b>Q: </b>How long do you usually stay in one area?<br />
-                <b>A: </b>Missionaries are usually in an area for 2-4 transfers, or 6 months. <br /><br />
-            </p>
-
+            <h2>Q&A</h2><br />
         </div>
     </div>
 
+        <div class="row">
+            <div class="col-lg-12 text-left">
+                <h4>Q: What time do missionaries get up in the morning?</h4><br />
+                <h4>A: Missionaries get up each morning at 6:30AM.</h4><br/><br />
+            </div>
+            <div class="col-lg-6">
+                <form>
+                    <textarea class="form-control" id="message" placeholder="Enter your answer here... "
+                              required data-validation-required-message="Enter your answer here... "></textarea>
+                    <p class="help-block text-danger"></p>
+                    <button class="btn btn-primary btn-sm text-uppercase" type="reset">Reply</button>
+                </form>
+            </div>
+        </div>   
+    <br />
+
+        <div class="row">
+            <div class="col-lg-12 text-left">
+                <h4>Q: How long does it take to learn the language?</h4><br />
+                <h4>A: Every missionary is different, but the average time it takes to learn the language is 6 months. </h4><br /><br />
+            </div>
+            <div class="col-lg-6">
+                <form>
+                    <textarea class="form-control" id="message" placeholder="Enter your answer here... "
+                              required data-validation-required-message="Enter your answer here... "></textarea>
+                    <p class="help-block text-danger"></p>
+                    <button class="btn btn-primary btn-sm text-uppercase" type="reset">Reply</button>
+                </form>
+            </div>
+        </div>   
+    <br />
+                        
+        <div class="row">
+            <div class="col-lg-12 text-left">
+                <h4>Q: How long do you usually stay in one area?</h4><br />
+                <h4>A: Missionaries are usually in an area for 2-4 transfers, or 6 months. </h4><br /><br />
+            </div>
+            <div class="col-lg-6">
+                <form>
+                    <textarea class="form-control" id="message" placeholder="Enter your answer here... "
+                                required data-validation-required-message="Enter your answer here... "></textarea>
+                    <p class="help-block text-danger"></p>
+                    <button class="btn btn-primary btn-sm text-uppercase" type="reset">Reply</button>
+                </form>
+            </div>
+        </div>    
+    <br />
+    
+
+    <!--Users can submit questions via this form-->
     <div class="row">
         <div class="col-lg-12 text-center">
             <h2>Have any questions?</h2>

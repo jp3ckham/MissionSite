@@ -7,12 +7,14 @@ using System.Web.Mvc;
 namespace MissionSite.Controllers
 {
     public class HomeController : Controller
-    {
+    {   
+        //calls the index view
         public ActionResult Index()
         {
             return View();
         }
 
+        //calls the about view
         public ActionResult About()
         {
             ViewBag.Message = "Hello";
@@ -20,6 +22,7 @@ namespace MissionSite.Controllers
             return View();
         }
 
+        //calls the contact page
         public ActionResult Contact()
         {
             ViewBag.Message = "Your contact page.";
