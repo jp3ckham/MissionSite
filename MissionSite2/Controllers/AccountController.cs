@@ -263,7 +263,7 @@ namespace MissionSite2.Controllers
             return View();
         }
 
-        //
+        
         // GET: /Account/ResetPasswordConfirmation
         [AllowAnonymous]
         public ActionResult ResetPasswordConfirmation()
