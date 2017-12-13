@@ -1,0 +1,61 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+<!--Authors: Jerika Ostler, Josh Blotter, Jonathan Peckham, Melanie Mitsvotai-->
+
+ <!-- Header -->
+<header class="masthead">
+    <div class="container">
+        <div class="intro-text">
+            <div class="intro-heading text-uppercase">Missionary Hub</div>
+            <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="#services">Getting Started</a> @*Takes the user down the page to the missions, contact, and about page links*@
+        </div>
+    </div>
+</header>
+<!-- Services -->
+<section id="services">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <h2 class="section-heading text-uppercase">Home</h2>
+                <h3 class="section-subheading text-muted">Select an option below</h3>
+            </div>
+        </div>
+        
+        <div class="row text-center">
+            <div class="col-md-4">
+                <a href="/SelectedMission/Mission">
+                    <span class="fa-stack fa-4x">
+                        <i class="fa fa-circle fa-stack-2x text-primary"></i>
+                        <i class="fa fa-globe fa-stack-1x fa-inverse"></i>
+                    </span>
+                    <h4 class="service-heading">Missions</h4> @*Takes user to the missions page*@
+                    <p class="text-muted">The Answers to the questions all missionaries have</p>
+                </a>
+            </div>
+
+            <div class="col-md-4">
+                <a href="/Home/About">
+                    <span class="fa-stack fa-4x">
+                        <i class="fa fa-circle fa-stack-2x text-primary"></i>
+                        <i class="fa fa-book fa-stack-1x fa-inverse"></i>
+                    </span>
+                    <h4 class="service-heading">About Us</h4>  @*Takes user to the About page*@
+                    <p class="text-muted">We'd love to have you get to know us a little better</p>
+                </a>
+            </div>
+            <div class="col-md-4">
+                <a href="/Home/Contact">
+                    <span class="fa-stack fa-4x">
+                        <i class="fa fa-circle fa-stack-2x text-primary"></i>
+                        <i class="fa fa-phone fa-stack-1x fa-inverse"></i>
+                    </span>
+                    <h4 class="service-heading">Contact Us</h4>  @*Takes user to the Contact page*@
+                    <p class="text-muted">Questions or comments let us know!</p>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+
