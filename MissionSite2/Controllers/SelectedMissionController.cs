@@ -11,12 +11,18 @@ namespace MissionSite.Controllers
         public ActionResult Mission()
         {   
             //this instantiates the dropdown list giving it values and stuff
-            List<SelectListItem> missions = new List<SelectListItem>();
-            missions.Add(new SelectListItem { Text = "Select a mission", Value = "0", Disabled = true, Selected = true });
-            missions.Add(new SelectListItem { Text = "Philippines, Cavite", Value = "1" });
-            missions.Add(new SelectListItem { Text = "Africa, Mozambique Maputo", Value = "2" });
-            missions.Add(new SelectListItem { Text = "Mexico, Mexico City Southeast", Value = "3" });
-            ViewBag.MissionName = missions;
+
+
+            List<SelectListItem> missions = new List<SelectListItem>(); // i dont think we need this
+          //  missions.Add(new SelectListItem { Text = "Select a mission", Value = "0", Disabled = true, Selected = true });
+           /* foreach (var item in Mission) //this should reference the table no?
+            {
+                int counter = 1; 
+                //this is supposed to add a mission to the drop down list for each item in the table?
+                missions.Add(new SelectListItem { Text = "itme.MissionName", Value = counter.ToString() });
+                counter++;
+            }*/
+            ViewBag.MissionName = missions; 
             return View();
         }
 
