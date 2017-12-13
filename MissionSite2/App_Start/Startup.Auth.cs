@@ -66,3 +66,6 @@ namespace MissionSite2
         }
     }
 }
+
+//ClientId = "570842092160-j08d4vfube1fjt8jp27ua47a9qg7rbag.apps.googleusercontent.com",
+//ClientSecret = "u2CbB68rMAB5oMgKd3J_3T98"
