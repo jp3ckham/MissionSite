@@ -43,12 +43,13 @@
                 <h5>A: Missionaries get up each morning at 6:30AM.</h5><br/><br />
             </div>
             <div class="col-lg-6">
+                @*@Html.TextBox("CompanyName", "", new { visible = "false" })
                 <form>
                     <textarea class="form-control" id="message" placeholder="Enter your answer here... "
                               required data-validation-required-message="Enter your answer here... "></textarea>
                     <p class="help-block text-danger"></p>
-                    <button class="btn btn-primary btn-sm text-uppercase" type="reset">Reply</button>
-                </form>
+                    <button class="btn btn-primary btn-sm text-uppercase" type="reset" visible ="true">Reply</button>
+                </form>*@
             </div>
         </div>   
     <br />
