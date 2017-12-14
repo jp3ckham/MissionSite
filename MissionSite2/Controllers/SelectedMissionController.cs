@@ -10,6 +10,7 @@ namespace MissionSite.Controllers
 {
     public class SelectedMissionController : Controller
     {
+        public static Mission mission = null;
         //Create Database context variable
         public MissionSite2Context db = new MissionSite2Context();
 
@@ -21,13 +22,19 @@ namespace MissionSite.Controllers
             return View();
         }
 
-        //[Authorize]
+        
         [HttpPost]
-        public ViewResult MissionChosen(int? missionID)
+        public ActionResult MissionChosen(int? missionID)
         {
             //this is the logic after you click dropdown this fills the viewbag for the page
-            Mission mission = db.Mission.Find(missionID);
+            mission = db.Mission.Find(missionID);
 
+            return RedirectToAction("FAQ");
+        }
+
+        [Authorize]
+        public ActionResult FAQ()
+        {
 
             ViewBag.NameOfMission = mission.MissionName;
             ViewBag.PresidentName = mission.MissionPresidentName;
@@ -38,9 +45,9 @@ namespace MissionSite.Controllers
             ViewBag.Flag = mission.MissionFlag;
 
             IEnumerable<MissionQuestions> missionquestions =
-                db.Database.SqlQuery<MissionQuestions>("SELECT MissionQuestionID, MissionID, UserID, Question, Answer FROM MissionQuestions WHERE MissionID = " + missionID);
+               db.Database.SqlQuery<MissionQuestions>("SELECT MissionQuestionID, MissionID, UserID, Question, Answer FROM MissionQuestions WHERE MissionID = " + mission.MissionID);
 
-            return View("FAQ", missionquestions);
+            return View(missionquestions);
         }
 
 

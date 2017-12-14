@@ -348,6 +348,7 @@ namespace MissionSite2.Controllers
                         var givenNameClaim = externalIdentity.Result.Claims.FirstOrDefault(c => c.Type == ClaimTypes.GivenName);
 
                         //The following checks to see if the user already exists in the User table. If it doesn't, a new user is added
+
                         var email = emailClaim.Value;
                         var firstName = givenNameClaim.Value;
                         var lastname = lastNameClaim.Value;
