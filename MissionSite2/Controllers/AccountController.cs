@@ -347,14 +347,20 @@ namespace MissionSite2.Controllers
 
                         var givenNameClaim = externalIdentity.Result.Claims.FirstOrDefault(c => c.Type == ClaimTypes.GivenName);
 
-
+                        //The following checks to see if the user already exists in the User table. If it doesn't, a new user is added
                         var email = emailClaim.Value;
                         var firstName = givenNameClaim.Value;
                         var lastname = lastNameClaim.Value;
-                        var newUser = db.User.Add(new Users());
-                        newUser.UserEmail = email;
-                        newUser.UserFirstName = firstName;
-                        newUser.UserLastName = lastname;
+                        if (db.User.Find(email) == null)
+                        {
+                            var newUser = db.User.Add(new Users());
+
+                            newUser.UserEmail = email;
+                            newUser.UserFirstName = firstName;
+                            newUser.UserLastName = lastname;
+                            db.SaveChanges();
+                        }
+
                     }
                     return RedirectToLocal(returnUrl);
                 case SignInStatus.LockedOut:

@@ -11,13 +11,7 @@ namespace MissionSite2.Models
     public class Users
     {
         [Key]
-        public int UserID { get; set; }
-
-        [Required]
-        [EmailAddress(ErrorMessage ="Please enter a valid email address")]
         public string UserEmail { get; set; }
-
-        
 
         public string UserPassword { get; set; }
 

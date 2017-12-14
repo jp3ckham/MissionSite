@@ -20,7 +20,7 @@ namespace MissionSite2.Models
 
         [ForeignKey("Users")]
         [Required(ErrorMessage = "The User ID  is required")]
-        public int UserID { get; set; }
+        public string UserEmail { get; set; }
         public virtual Users Users { get; set; }
 
         [Required(ErrorMessage = "The Question  is required")]
