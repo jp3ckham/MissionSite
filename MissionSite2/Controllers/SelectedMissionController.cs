@@ -46,9 +46,14 @@ namespace MissionSite.Controllers
             ViewBag.Flag = mission.MissionFlag;
 
             IEnumerable<MissionQuestions> missionquestions =
-               db.Database.SqlQuery<MissionQuestions>("SELECT MissionQuestionID, MissionID, UserID, Question, Answer FROM MissionQuestions WHERE MissionID = " + mission.MissionID);
+               db.Database.SqlQuery<MissionQuestions>("SELECT MissionQuestionID, MissionID, UserEmail, Question, Answer FROM MissionQuestions WHERE MissionID = " + mission.MissionID);
 
             return View(missionquestions);
+        }
+
+        public ActionResult AnswerQuestion()
+        {
+            return View("FAQ");
         }
 
 

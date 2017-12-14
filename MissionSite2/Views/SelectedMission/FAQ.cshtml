@@ -1,4 +1,4 @@
-﻿@model MissionSite2.Models.MissionQuestions
+﻿@model IEnumerable<MissionSite2.Models.MissionQuestions>
     @{
         ViewBag.Title = "FAQ";
     }
@@ -37,7 +37,7 @@
             </div>
         </div>
 
-       @*@foreach (var item in Model)
+       @foreach (var item in Model)
        {
         <table>
             <tr>
@@ -53,12 +53,24 @@
             </tr>
             <tr>
                 <td>
-                    @Html.ActionLink("Answer", "Answer", new { id = item.MissionQuestionID })
+                    <div class="col-lg-6">
+                        <button data-toggle="collapse" data-target="#demo" class="btn btn-primary btn-sm text-uppercase">Reply</button>
+                        <br />
+                        <div id="demo" class="collapse">
+                            @using (Html.BeginForm("AnswerQuestion", "SelectedMission", FormMethod.Post))
+                            {
+                                @Html.TextArea("Insert Answer Here...")
+
+                                <br />
+                                <button class="btn btn-primary btn-sm text-uppercase" type="submit" value="Submit">Submit</button>
+                            }
+                        </div>
+                    </div>
                 </td>
             </tr>
         </table>
-       }*@
-        <div class="row">
+       }
+        @*<div class="row">
             <div class="col-lg-12 text-left">
                 <h5>Q: What time do missionaries get up in the morning?</h5><br />
                 <h5>A: Missionaries get up each morning at 6:30AM.</h5><br /><br />
@@ -71,15 +83,11 @@
                 <h5>Q: How long does it take to learn the language?</h5><br />
                 <h5>A: Every missionary is different, but the average time it takes to learn the language is 6 months. </h5><br /><br />
             </div>
-            <div class="col-lg-6">
-                <form>
-                    <textarea class="form-control" id="message" placeholder="Enter your answer here... "
-                              required data-validation-required-message="Enter your answer here... "></textarea>
-                    <p class="help-block text-danger"></p>
-                    <button class="btn btn-primary btn-sm text-uppercase" type="reset">Reply</button>
-                </form>
+
+            
+
+
             </div>
-        </div>
         <br />
 
         <div class="row">
@@ -96,7 +104,7 @@
                 </form>
             </div>
         </div>
-        <br />
+        <br />*@
 
 
         <!--Users can submit questions via this form-->
