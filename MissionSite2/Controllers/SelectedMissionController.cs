@@ -71,7 +71,8 @@ namespace MissionSite.Controllers
             newQuestion.MissionID = int.Parse(form["MissionID"]);
             db.SaveChanges();
 
-            return View("FAQ", missionquestions);
+            return RedirectToAction("FAQ", missionquestions);
+
         }
 
 
