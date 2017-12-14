@@ -5,14 +5,16 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using MissionSite2.Models;
 
 namespace MissionSite.Controllers
 {
     public class SelectedMissionController : Controller
     {
+        //Create Database context variable
         public MissionSite2Context db = new MissionSite2Context();
 
-        
+        //Put missions in a list for the dropdown list in the view
         public ActionResult Mission()
         {
             ViewBag.Missions = db.Mission.ToList();
