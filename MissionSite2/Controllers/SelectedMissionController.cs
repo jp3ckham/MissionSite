@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MissionSite2.DAL;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -7,16 +8,12 @@ using System.Web.Mvc;
 namespace MissionSite.Controllers
 {
     public class SelectedMissionController : Controller
-    {       
+    {
+        public MissionSite2Context db = new MissionSite2Context();
+
         public ActionResult Mission()
-        {   
-            //this instantiates the dropdown list giving it values and stuff
-            List<SelectListItem> missions = new List<SelectListItem>();
-            missions.Add(new SelectListItem { Text = "Select a mission", Value = "0", Disabled = true, Selected = true });
-            missions.Add(new SelectListItem { Text = "Philippines, Cavite", Value = "1" });
-            missions.Add(new SelectListItem { Text = "Africa, Mozambique Maputo", Value = "2" });
-            missions.Add(new SelectListItem { Text = "Mexico, Mexico City Southeast", Value = "3" });
-            ViewBag.MissionName = missions;
+        { 
+            ViewBag.Missions = db.Mission.ToList();
             return View();
         }
 

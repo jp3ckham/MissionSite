@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MissionSite2.Models;
+using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
@@ -13,9 +14,8 @@ namespace MissionSite2.DAL
         {
 
         }
-
         public DbSet<Users> User { get; set; }
-        public DbSet<Mission> Missions { get; set; }
+        public DbSet<Mission> Mission { get; set; }
         public DbSet<MissionQuestions> MissionQuestion { get; set; } 
     }
 }
