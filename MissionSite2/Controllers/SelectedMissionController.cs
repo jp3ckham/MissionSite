@@ -5,7 +5,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using MissionSite2.Models;
 
 namespace MissionSite.Controllers
 {
@@ -15,17 +14,21 @@ namespace MissionSite.Controllers
         public MissionSite2Context db = new MissionSite2Context();
 
         //Put missions in a list for the dropdown list in the view
+        [AllowAnonymous]
         public ActionResult Mission()
         {
             ViewBag.Missions = db.Mission.ToList();
             return View();
         }
 
+        //[Authorize]
         [HttpPost]
         public ViewResult MissionChosen(int? missionID)
         {
             //this is the logic after you click dropdown this fills the viewbag for the page
             Mission mission = db.Mission.Find(missionID);
+
+
             ViewBag.NameOfMission = mission.MissionName;
             ViewBag.PresidentName = mission.MissionPresidentName;
             ViewBag.MissionAddress = mission.MissionAddress;
