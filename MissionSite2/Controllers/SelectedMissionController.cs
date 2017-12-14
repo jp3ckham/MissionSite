@@ -59,7 +59,7 @@ namespace MissionSite.Controllers
             updateQuestion.Answer = form["newAnswer"];
             db.SaveChanges();
 
-            return View("FAQ", missionquestions);
+            return RedirectToAction("FAQ", missionquestions);
         }
 
         //Post method to ask a question. Passes information from form and puts it in the database
@@ -72,7 +72,6 @@ namespace MissionSite.Controllers
             db.SaveChanges();
 
             return RedirectToAction("FAQ", missionquestions);
-
         }
 
 
