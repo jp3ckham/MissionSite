@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Security;
 
 namespace MissionSite.Controllers
 {
@@ -21,8 +22,9 @@ namespace MissionSite.Controllers
             return View();
         }
 
-        //[Authorize]
+        
         [HttpPost]
+        [Authorize]
         public ViewResult MissionChosen(int? missionID)
         {
             //this is the logic after you click dropdown this fills the viewbag for the page
