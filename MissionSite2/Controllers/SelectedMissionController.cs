@@ -34,8 +34,10 @@ namespace MissionSite.Controllers
             ViewBag.DomReligion = mission.DominantReligion;
             ViewBag.Flag = mission.MissionFlag;
 
+            IEnumerable<MissionQuestions> missionquestions =
+                db.Database.SqlQuery<MissionQuestions>("SELECT MissionQuestionID, MissionID, UserID, Question, Answer FROM MissionQuestions WHERE MissionID = " + missionID);
 
-            return View("FAQ");
+            return View("FAQ", missionquestions);
         }
 
 

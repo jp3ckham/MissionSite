@@ -9,12 +9,16 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using MissionSite2.Models;
+using MissionSite2.DAL;
 
 namespace MissionSite2.Controllers
 {
+    
+
     [Authorize]
     public class AccountController : Controller
     {
+        public MissionSite2Context db = new MissionSite2Context();
         private ApplicationSignInManager _signInManager;
         private ApplicationUserManager _userManager;
 
@@ -347,6 +351,10 @@ namespace MissionSite2.Controllers
                         var email = emailClaim.Value;
                         var firstName = givenNameClaim.Value;
                         var lastname = lastNameClaim.Value;
+                        var newUser = db.User.Add(new Users());
+                        newUser.UserEmail = email;
+                        newUser.UserFirstName = firstName;
+                        newUser.UserLastName = lastname;
                     }
                     return RedirectToLocal(returnUrl);
                 case SignInStatus.LockedOut:

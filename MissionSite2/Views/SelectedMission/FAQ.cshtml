@@ -1,58 +1,78 @@
-﻿
-@{
-    ViewBag.Title = "FAQ";
-}
+﻿@model IEnumerable<MissionSite2.Models.MissionQuestions>
+    @{
+        ViewBag.Title = "FAQ";
+    }
 
-<div class="container">
+    <div class="container">
 
 
-    <div class="row">
-        <div class="col-lg-12 text-center">
-            <h2>@ViewBag.NameOfMission Mission FAQ's</h2>
-        </div>
-    </div>
-
-    <!--Dynamic page based on what the user picks in the dropdown list in the Mission View-->
-    <div class="row">
-        <div class="col-lg-6">
-            <p>
-                <h5>President Name: </h5>@ViewBag.PresidentName <br /> <br />
-                <h5>Mission Address: </h5>@ViewBag.MissionAddress <br /><br />
-                <h5>Language: </h5>@ViewBag.Language <br /><br />
-                <h5>Climate: </h5>@ViewBag.Climate <br /><br />
-                <h5>Dominant Religion: </h5>@ViewBag.DomReligion <br /><br />
-            </p>    
-        </div>
-        <div class="col-lg-6 text-center">
-            <div class="container">
-                <img class="img-thumbnail" src="~/Content/img/@(ViewBag.Flag)" />
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <h2>@ViewBag.NameOfMission Mission FAQ's</h2>
             </div>
         </div>
-    </div>
 
-    <!--question and answer section-->
-    <div class="row">
-        <div class="col-lg-12">
-            <h2>Q&A</h2><br />
+        <!--Dynamic page based on what the user picks in the dropdown list in the Mission View-->
+        <div class="row">
+            <div class="col-lg-6">
+                <p>
+                    <h5>President Name: </h5>@ViewBag.PresidentName <br /> <br />
+                    <h5>Mission Address: </h5>@ViewBag.MissionAddress <br /><br />
+                    <h5>Language: </h5>@ViewBag.Language <br /><br />
+                    <h5>Climate: </h5>@ViewBag.Climate <br /><br />
+                    <h5>Dominant Religion: </h5>@ViewBag.DomReligion <br /><br />
+                </p>
+            </div>
+            <div class="col-lg-6 text-center">
+                <div class="container">
+                    <img class="img-thumbnail" src="~/Content/img/@(ViewBag.Flag)" />
+                </div>
+            </div>
         </div>
-    </div>
 
+        <!--question and answer section-->
+        <div class="row">
+            <div class="col-lg-12">
+                <h2>Q&A</h2><br />
+            </div>
+        </div>
+
+       @foreach (var item in Model)
+       {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Question)
+            </td>
+           
+        </tr>
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Answer)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.ActionLink("Answer", "Answer", new { id = item.MissionQuestionID})
+            </td>
+        </tr>
+        <
+       }
         <div class="row">
             <div class="col-lg-12 text-left">
                 <h5>Q: What time do missionaries get up in the morning?</h5><br />
-                <h5>A: Missionaries get up each morning at 6:30AM.</h5><br/><br />
+                <h5>A: Missionaries get up each morning at 6:30AM.</h5><br /><br />
             </div>
             <div class="col-lg-6">
                 @*@Html.TextBox("CompanyName", "", new { visible = "false" })
-                <form>
-                    <textarea class="form-control" id="message" placeholder="Enter your answer here... "
-                              required data-validation-required-message="Enter your answer here... "></textarea>
-                    <p class="help-block text-danger"></p>
-                    <button class="btn btn-primary btn-sm text-uppercase" type="reset" visible ="true">Reply</button>
-                </form>*@
+                    <form>
+                        <textarea class="form-control" id="message" placeholder="Enter your answer here... "
+                                  required data-validation-required-message="Enter your answer here... "></textarea>
+                        <p class="help-block text-danger"></p>
+                        <button class="btn btn-primary btn-sm text-uppercase" type="reset" visible ="true">Reply</button>
+                    </form>*@
             </div>
-        </div>   
-    <br />
+        </div>
+        <br />
 
         <div class="row">
             <div class="col-lg-12 text-left">
@@ -67,9 +87,9 @@
                     <button class="btn btn-primary btn-sm text-uppercase" type="reset">Reply</button>
                 </form>
             </div>
-        </div>   
-    <br />
-                        
+        </div>
+        <br />
+
         <div class="row">
             <div class="col-lg-12 text-left">
                 <h5>Q: How long do you usually stay in one area?</h5><br />
@@ -78,26 +98,26 @@
             <div class="col-lg-6">
                 <form>
                     <textarea class="form-control" id="message" placeholder="Enter your answer here... "
-                                required data-validation-required-message="Enter your answer here... "></textarea>
+                              required data-validation-required-message="Enter your answer here... "></textarea>
                     <p class="help-block text-danger"></p>
                     <button class="btn btn-primary btn-sm text-uppercase" type="reset">Reply</button>
                 </form>
             </div>
-        </div>    
-    <br />
-    
+        </div>
+        <br />
 
-    <!--Users can submit questions via this form-->
-    <div class="row">
-        <div class="col-lg-12 text-center">
-            <h2>Have any questions?</h2>
-            <form>
-                <textarea class="form-control" id="message" placeholder="Enter your question here *"
-                          required data-validation-required-message="Enter your question here *"></textarea>
-                <p class="help-block text-danger"></p>
-                <button class="btn btn-primary btn-xl text-uppercase" type="reset">Ask</button>
-            </form>
+
+        <!--Users can submit questions via this form-->
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <h2>Have any questions?</h2>
+                <form>
+                    <textarea class="form-control" id="message" placeholder="Enter your question here *"
+                              required data-validation-required-message="Enter your question here *"></textarea>
+                    <p class="help-block text-danger"></p>
+                    <button class="btn btn-primary btn-xl text-uppercase" type="reset">Ask</button>
+                </form>
+            </div>
         </div>
     </div>
-</div>
 
