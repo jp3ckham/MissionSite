@@ -2,6 +2,7 @@
     @{
         ViewBag.Title = "FAQ";
         var missionID = 0;
+        int iCount = 0;
     }
 
     <div class="container">
@@ -63,9 +64,9 @@
             <tr>
                 <td>
                     <div class="col-lg-6">
-                        <button data-toggle="collapse" data-target="#demo" class="btn btn-primary btn-sm text-uppercase">Reply</button>
+                        <button data-toggle="collapse" data-target="#@iCount" class="btn btn-primary btn-sm text-uppercase">Reply</button>
                         <br />
-                        <div id="demo" class="collapse">
+                        <div id="@iCount" class="collapse">
                             @using (Html.BeginForm("AnswerQuestion", "SelectedMission", FormMethod.Post))
                             {
                                 @Html.TextArea("newAnswer")
@@ -79,6 +80,8 @@
                 </td>
             </tr>
         </table>
+
+           iCount++;
        }
 
         <br />
