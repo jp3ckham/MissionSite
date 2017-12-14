@@ -58,19 +58,22 @@ namespace MissionSite2
             //   appId: "",
             //   appSecret: "");
 
-            //app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
-            //{
-            //    ClientId = "",
-            //    ClientSecret = ""
-            //});
+            app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
+            {
+                ClientId = "613386324592-6q0gatt1f9v6jo1r2sd5eiqb81a9c40b.apps.googleusercontent.com",
+                ClientSecret = "YYOK4FEDnDRusaEC-Oe2M8xk"
+            });
         }
     }
 }
+
 
 //Josh's API
 //613386324592-6q0gatt1f9v6jo1r2sd5eiqb81a9c40b.apps.googleusercontent.com
 //YYOK4FEDnDRusaEC-Oe2M8xk
 
+
+//jerika's api
 //ClientId = "6048570098-qsumaf03mnh411nh3astdjmq8u59c0o1.apps.googleusercontent.com",
 //ClientSecret = "77dQUc4cfOkCnvRY0opjDtik"
 

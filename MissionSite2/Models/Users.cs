@@ -26,8 +26,5 @@ namespace MissionSite2.Models
 
         [Required(ErrorMessage = "Please enter your last name")]
         public string UserLastName { get; set; }
-
-
-
     }
 }
