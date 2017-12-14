@@ -12,6 +12,7 @@ namespace MissionSite.Controllers
     public class SelectedMissionController : Controller
     {
         public static Mission mission = null;
+        public static IEnumerable<MissionQuestions> missionquestions = null;
         //Create Database context variable
         public MissionSite2Context db = new MissionSite2Context();
 
@@ -45,7 +46,7 @@ namespace MissionSite.Controllers
             ViewBag.DomReligion = mission.DominantReligion;
             ViewBag.Flag = mission.MissionFlag;
 
-            IEnumerable<MissionQuestions> missionquestions =
+            missionquestions =
                db.Database.SqlQuery<MissionQuestions>("SELECT MissionQuestionID, MissionID, UserEmail, Question, Answer FROM MissionQuestions WHERE MissionID = " + mission.MissionID);
 
             return View(missionquestions);
@@ -54,7 +55,11 @@ namespace MissionSite.Controllers
         [HttpPost]
         public ActionResult AnswerQuestion()
         {
-            return View("FAQ");
+            MissionQuestions updateQuestion = db.MissionQuestion.Find(int.Parse(form["MissionQuestionID"]));
+            updateQuestion.Answer = form["newAnswer"];
+            db.SaveChanges();
+
+            return View("FAQ", missionquestions);
         }
 
         [HttpPost]
