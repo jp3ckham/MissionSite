@@ -6,7 +6,7 @@
 <!--This view shows a form with a dropdown list of missions, the mission the user selects is then passed 
     to the SelectedMissionController to dynamically create a FAQ view-->
 <div class="container">
-   @using (Html.BeginForm("MissionChosen", "SelectedMissionController", FormMethod.Post))
+   @using (Html.BeginForm("MissionChosen", "SelectedMissionController", FormMethod.Get))
    {
 
         <div class="form-group">

@@ -21,8 +21,8 @@ namespace MissionSite.Controllers
         public ViewResult MissionChosen(FormCollection form)
         {
             //this is the logic after you click dropdown this fills the viewbag for the page
-             
-                
+
+
                 ViewBag.NameOfMission = "";
                 ViewBag.PresidentName = "";
                 ViewBag.MissionAddress = "";
