@@ -5,7 +5,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using MissionSite2.Models;
 
 namespace MissionSite.Controllers
 {
@@ -26,6 +25,8 @@ namespace MissionSite.Controllers
         {
             //this is the logic after you click dropdown this fills the viewbag for the page
             Mission mission = db.Mission.Find(missionID);
+
+
             ViewBag.NameOfMission = mission.MissionName;
             ViewBag.PresidentName = mission.MissionPresidentName;
             ViewBag.MissionAddress = mission.MissionAddress;
