@@ -68,10 +68,11 @@
                         <div id="demo" class="collapse">
                             @using (Html.BeginForm("AnswerQuestion", "SelectedMission", FormMethod.Post))
                             {
-                                @Html.TextArea("Insert Answer Here...")
+                                @Html.TextArea("newAnswer")
+                                @Html.Hidden("MissionQuestionID", item.MissionQuestionID)
 
                                 <br />
-                                <button class="btn btn-primary btn-sm text-uppercase" type="submit" value="Submit">Submit</button>
+                                <button class="btn btn-primary btn-sm text-uppercase" type="submit" value= "submit">Submit</button>
                             }
                         </div>
                     </div>
