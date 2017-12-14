@@ -14,12 +14,14 @@ namespace MissionSite.Controllers
         public MissionSite2Context db = new MissionSite2Context();
 
         //Put missions in a list for the dropdown list in the view
+        [AllowAnonymous]
         public ActionResult Mission()
         {
             ViewBag.Missions = db.Mission.ToList();
             return View();
         }
 
+        //[Authorize]
         [HttpPost]
         public ViewResult MissionChosen(int? missionID)
         {
