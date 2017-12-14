@@ -34,6 +34,7 @@ namespace MissionSite.Controllers
             return RedirectToAction("FAQ");
         }
 
+        //users have to log in to view the mission faq page... this pulls the info from our database and stores it in the viewbag
         [Authorize]
         public ActionResult FAQ()
         {
