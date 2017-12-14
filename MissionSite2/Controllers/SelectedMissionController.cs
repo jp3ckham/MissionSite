@@ -51,9 +51,22 @@ namespace MissionSite.Controllers
             return View(missionquestions);
         }
 
+        [HttpPost]
         public ActionResult AnswerQuestion()
         {
             return View("FAQ");
+        }
+
+        [HttpPost]
+        public ActionResult AskQuestion(FormCollection form)
+        {
+            var newQuestion = db.MissionQuestion.Add(new MissionQuestions());
+            newQuestion.Question = form["newAskedQuestion"];
+            newQuestion.MissionID = int.Parse(form["MissionID"]);
+            db.SaveChanges();
+
+            return View("FAQ", missionquestions);
+
         }
 
 

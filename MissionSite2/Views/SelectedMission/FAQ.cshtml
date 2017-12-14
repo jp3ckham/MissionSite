@@ -1,6 +1,7 @@
 ﻿@model IEnumerable<MissionSite2.Models.MissionQuestions>
     @{
         ViewBag.Title = "FAQ";
+        var missionID = "";
     }
 
     <div class="container">
@@ -39,6 +40,7 @@
 
        @foreach (var item in Model)
        {
+           @missionID = item.MissionID;
         <table>
             <tr>
                 <td>
@@ -78,19 +80,23 @@
         </table>
        }
 
-
+        <br />
+        <br />
 
         <!--Users can submit questions via this form-->
+
         <div class="row">
-            <div class="col-lg-12 text-center">
-                <h2>Have any questions?</h2>
-                <form>
-                    <textarea class="form-control" id="message" placeholder="Enter your question here *"
-                              required data-validation-required-message="Enter your question here *"></textarea>
-                    <p class="help-block text-danger"></p>
-                    <button class="btn btn-primary btn-xl text-uppercase" type="reset">Ask</button>
-                </form>
+            <div class="col-lg-12">
+
+                <h2>Ask a Question</h2>
+                @using (Html.BeginForm("AskQuestion", "SelectedMission", FormMethod.Post))
+                 {
+                    @Html.TextArea("newAskedQuestion")
+                    @Html.Hidden("MissionID", missionID)
+                    <br />
+                    <button class="btn btn-primary btn-sm text-uppercase" type="submit" value="Submit">Submit</button>
+                 }
+                </div>
             </div>
-        </div>
     </div>
 
