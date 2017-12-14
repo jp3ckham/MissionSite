@@ -53,7 +53,7 @@ namespace MissionSite.Controllers
         }
 
         [HttpPost]
-        public ActionResult AnswerQuestion()
+        public ActionResult AnswerQuestion(FormCollection form)
         {
             MissionQuestions updateQuestion = db.MissionQuestion.Find(int.Parse(form["MissionQuestionID"]));
             updateQuestion.Answer = form["newAnswer"];
