@@ -51,6 +51,11 @@ namespace MissionSite.Controllers
             return View(missionquestions);
         }
 
+        public ActionResult AnswerQuestion()
+        {
+            return View("FAQ");
+        }
+
 
         // GET: SelectedMission
         public ActionResult Index()
