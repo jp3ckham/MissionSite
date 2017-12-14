@@ -17,8 +17,6 @@ namespace MissionSite2.Models
         [EmailAddress(ErrorMessage ="Please enter a valid email address")]
         public string UserEmail { get; set; }
 
-        
-
         public string UserPassword { get; set; }
 
         [Required(ErrorMessage ="Please enter your first name")]

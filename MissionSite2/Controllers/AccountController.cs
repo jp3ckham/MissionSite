@@ -351,10 +351,16 @@ namespace MissionSite2.Controllers
                         var email = emailClaim.Value;
                         var firstName = givenNameClaim.Value;
                         var lastname = lastNameClaim.Value;
-                        var newUser = db.User.Add(new Users());
-                        newUser.UserEmail = email;
-                        newUser.UserFirstName = firstName;
-                        newUser.UserLastName = lastname;
+                        if (db.User.Find(email) == null)
+                        {
+                            var newUser = db.User.Add(new Users());
+
+                            newUser.UserEmail = email;
+                            newUser.UserFirstName = firstName;
+                            newUser.UserLastName = lastname;
+                            db.SaveChanges();
+                        }
+
                     }
                     return RedirectToLocal(returnUrl);
                 case SignInStatus.LockedOut:
