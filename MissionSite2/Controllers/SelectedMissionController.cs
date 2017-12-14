@@ -22,7 +22,7 @@ namespace MissionSite.Controllers
             return View();
         }
 
-        
+        //[Authorize]
         [HttpPost]
         [Authorize]
         public ViewResult MissionChosen(int? missionID)
