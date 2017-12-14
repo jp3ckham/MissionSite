@@ -46,14 +46,13 @@ namespace MissionSite.Controllers
             ViewBag.DomReligion = mission.DominantReligion;
             ViewBag.Flag = mission.MissionFlag;
 
-            missionquestions =
-               db.Database.SqlQuery<MissionQuestions>("SELECT MissionQuestionID, MissionID, UserEmail, Question, Answer FROM MissionQuestions WHERE MissionID = " + mission.MissionID);
+            missionquestions = db.Database.SqlQuery<MissionQuestions>("SELECT MissionQuestionID, MissionID, UserEmail, Question, Answer FROM MissionQuestions WHERE MissionID = " + mission.MissionID);
 
             return View(missionquestions);
         }
 
         [HttpPost]
-        public ActionResult AnswerQuestion()
+        public ActionResult AnswerQuestion(FormCollection form)
         {
             MissionQuestions updateQuestion = db.MissionQuestion.Find(int.Parse(form["MissionQuestionID"]));
             updateQuestion.Answer = form["newAnswer"];

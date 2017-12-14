@@ -1,7 +1,7 @@
 ﻿@model IEnumerable<MissionSite2.Models.MissionQuestions>
     @{
         ViewBag.Title = "FAQ";
-        var missionID = "";
+        var missionID = 0;
     }
 
     <div class="container">
@@ -40,7 +40,7 @@
 
        @foreach (var item in Model)
        {
-           @missionID = item.MissionID;
+           missionID= item.MissionID;
         <table>
             <tr>
                 <td>
