@@ -51,6 +51,7 @@ namespace MissionSite.Controllers
             return View(missionquestions);
         }
 
+        //Post method to answer a question. Passes information from the form on the FAQ page and updates the answer in the d
         [HttpPost]
         public ActionResult AnswerQuestion(FormCollection form)
         {
@@ -61,6 +62,7 @@ namespace MissionSite.Controllers
             return RedirectToAction("FAQ", missionquestions);
         }
 
+        //Post method to ask a question. Passes information from form and puts it in the database
         [HttpPost]
         public ActionResult AskQuestion(FormCollection form)
         {

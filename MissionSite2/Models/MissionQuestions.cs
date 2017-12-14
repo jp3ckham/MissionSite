@@ -7,6 +7,7 @@ using System.Web;
 
 namespace MissionSite2.Models
 {
+    //This is the mission questions model
     [Table("MissionQuestions")]
     public class MissionQuestions
     {
