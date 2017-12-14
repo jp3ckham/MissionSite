@@ -19,7 +19,6 @@ namespace MissionSite2.Models
         public virtual Mission Mission { get; set; }
 
         [ForeignKey("Users")]
-        [Required(ErrorMessage = "The User ID  is required")]
         public string UserEmail { get; set; }
         public virtual Users Users { get; set; }
 
