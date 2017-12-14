@@ -58,7 +58,7 @@ namespace MissionSite.Controllers
             updateQuestion.Answer = form["newAnswer"];
             db.SaveChanges();
 
-            return View("FAQ", missionquestions);
+            return RedirectToAction("FAQ", missionquestions);
         }
 
         [HttpPost]
