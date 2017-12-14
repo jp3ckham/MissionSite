@@ -352,6 +352,8 @@ namespace MissionSite2.Controllers
                         var email = emailClaim.Value;
                         var firstName = givenNameClaim.Value;
                         var lastname = lastNameClaim.Value;
+
+
                         if (db.User.Find(email) == null)
                         {
                             var newUser = db.User.Add(new Users());
