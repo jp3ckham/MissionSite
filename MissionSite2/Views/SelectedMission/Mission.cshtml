@@ -1,4 +1,5 @@
-﻿
+﻿@model List<MissionSite2.Models.Mission>
+
 @{
     ViewBag.Title = "Mission";
 }
@@ -8,8 +9,8 @@
     @using (Html.BeginForm("MissionChosen", "SelectedMission", FormMethod.Get))
     {
         <fieldset>
-            <h2>Missions</h2><br /><br/>
-            @Html.DropDownList("MissionName")
+            @*<h2>Missions</h2><br /><br/>
+            @Html.DropDownListFor(model => model.MissionName)*@
             <br />
             <br />
             <p>

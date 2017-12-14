@@ -58,11 +58,11 @@ namespace MissionSite2
             //   appId: "",
             //   appSecret: "");
 
-            //app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
-            //{
-            //    ClientId = "",
-            //    ClientSecret = ""
-            //});
+            app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
+            {
+                ClientId = "613386324592-6q0gatt1f9v6jo1r2sd5eiqb81a9c40b.apps.googleusercontent.com",
+                ClientSecret = "YYOK4FEDnDRusaEC-Oe2M8xk"
+            });
         }
     }
 }
@@ -76,3 +76,6 @@ namespace MissionSite2
 //jerika's api
 //ClientId = "6048570098-qsumaf03mnh411nh3astdjmq8u59c0o1.apps.googleusercontent.com",
 //ClientSecret = "77dQUc4cfOkCnvRY0opjDtik"
+
+//ClientId = "570842092160-j08d4vfube1fjt8jp27ua47a9qg7rbag.apps.googleusercontent.com",
+//ClientSecret = "u2CbB68rMAB5oMgKd3J_3T98"
